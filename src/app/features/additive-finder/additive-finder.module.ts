@@ -9,6 +9,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DangerColorPipe } from './pipes/danger-color.pipe';
 import { MainComponent } from './main/main.component';
+import { FormsModule } from '@angular/forms';
+import { DangerClassColorPipe } from './pipes/danger-class-color.pipe';
+import { DangerTextPipe } from './pipes/danger-text.pipe';
+import { HeaderTitlePipe } from './pipes/header-title.pipe';
 
 @NgModule({
   declarations: [
@@ -18,10 +22,14 @@ import { MainComponent } from './main/main.component';
     HeaderComponent,
     FooterComponent,
     MainComponent,
-    DangerColorPipe],
+    DangerColorPipe,
+    DangerClassColorPipe,
+    DangerTextPipe,
+    HeaderTitlePipe],
   imports: [
     CommonModule,
     IonicModule,
+    FormsModule,
     RouterModule.forChild([{
       path:'',
       component:MainComponent,
@@ -37,6 +45,7 @@ import { MainComponent } from './main/main.component';
         component:HomepageComponent
       }]
     },])
-  ]
+  ],
+  providers:[]
 })
 export class AdditiveFinderModule { }

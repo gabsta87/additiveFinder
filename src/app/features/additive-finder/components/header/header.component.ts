@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  @Input() currentPage!:any;
+  @Input() previousPage?:any;
 
-  ngOnInit(): void {
+  constructor(private readonly _router: Router ) { }
+
+  ngOnInit(): void {}
+
+  navigateBack(){
+    console.log("previous page = ",this.previousPage);
+    
+    this._router.navigate([this.previousPage]);
   }
 
 }

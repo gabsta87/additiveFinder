@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+.code_acceptable{
+    background-color: green;
+    --background: green;
+}
+
+.code_avoid{
+    background-color: yellow;
+    --background: yellow;
+}
+
+.code_controversy{
+    background-color: orange;
+    --background: orange;
+}
+
+.code_danger{
+    background-color: red;
+    --background : red;
+}

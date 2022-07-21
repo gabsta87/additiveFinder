@@ -1,2 +1,23 @@
-<app-header></app-header>
-<p>detailpage works!</p>
+<app-header currentPage="details" previousPage="{{previousPage}}"></app-header>
+<ion-content>
+    <!-- { "id": "100", "name": "Curcumine", "level": "0", "type": "colorants", "info": "" } -->
+    <ion-card>
+        <ion-item class="{{elementInfo?.level|dangerClassColor}}">
+            <ion-label>E{{elementInfo?.id}}</ion-label>
+        </ion-item>
+
+        <ion-card-header>
+            <ion-card-title>{{elementInfo?.name}}</ion-card-title>
+            <ion-card-subtitle>{{elementInfo?.type}}</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-item>
+            <ion-label>{{elementInfo?.level|dangerText}}</ion-label>
+        </ion-item>
+
+        <ion-card-content>
+            {{elementInfo?.info}}
+            This is where content comes
+        </ion-card-content>
+    </ion-card>
+</ion-content>

@@ -1,5 +1,14 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>Header</ion-title>
+        <ion-grid class="ion-no-padding">
+            <ion-row>
+                <ion-col *ngIf="previousPage" size="0.3" (click)="navigateBack()">
+                  <ion-icon name="arrow-back-outline"></ion-icon>
+                </ion-col>
+                <ion-col>
+                    <ion-title>{{currentPage|headerTitle}}</ion-title>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
     </ion-toolbar>
 </ion-header>

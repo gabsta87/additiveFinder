@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataLoaderService } from '../../services/data-loader.service';
 
 @Component({
   selector: 'app-homepage',
@@ -8,13 +9,22 @@ import { Router } from '@angular/router';
 })
 export class HomepageComponent implements OnInit {
 
-  itemsList:any = [{name:"first elem",id:"E100",type:"colorant",level:"2"},{name:"second elem",id:"E101",type:"colorant",level:"0"}];
+  itemsList!:{name:string,id:string,type:string,level:string,info:string}[];
 
-  constructor(private readonly _router : Router) {}
+  constructor(private readonly _router : Router,private readonly _dataLoader : DataLoaderService) {}
 
-  ngOnInit(): void {}
+  async ngOnInit() {
+    let tmp:any = await this._dataLoader.getData();
+    console.log("loaded ",tmp);
+    
+    this.itemsList = tmp.additives;
+  }
 
-  seeDetails(chosenItem:{name:string,id:string,type:string,level:number}){
-    this._router.navigate(["login"],{queryParams:{lastname:'Maret',firstname:"Gabriel"}})
+  seeDetails(chosenItem:{name:string,id:string,type:string,level:string,info:string}){
+    this._router.navigate(["details"],{queryParams:{item:chosenItem.id,previousPage:"homepage"}})
+  }
+
+  loadData($event:any){
+    console.log("infinite scroll event = ",$event);
   }
 }

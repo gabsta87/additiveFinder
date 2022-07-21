@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { OutletContext } from '@angular/router';
 
 @Pipe({
   name: 'dangerColor'

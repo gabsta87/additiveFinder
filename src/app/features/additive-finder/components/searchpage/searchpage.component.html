@@ -1,4 +1,11 @@
+<app-header currentPage="search"></app-header>
 <ion-content>
-    <app-header></app-header>
-    <p>searchpage works!</p>
+    <ion-item>
+        <ion-label>E</ion-label>
+        <ion-input [(ngModel)]="searchValue"></ion-input>
+    </ion-item>
+    <ion-button (click)="startSearch1()">Search</ion-button>
+
+<!--<ion-input #inputVal></ion-input>
+    <ion-button (click)="startSearch2(inputVal)">Search</ion-button> -->
 </ion-content>
