@@ -24,8 +24,19 @@ import { MainComponent } from './main/main.component';
     IonicModule,
     RouterModule.forChild([{
       path:'',
-      component:MainComponent
-    }])
+      component:MainComponent,
+      children:[
+        {
+        path:'search',
+        component:SearchpageComponent
+      },{
+        path:'details',
+        component:DetailpageComponent
+      },{
+        path:'homepage',
+        component:HomepageComponent
+      }]
+    },])
   ]
 })
 export class AdditiveFinderModule { }

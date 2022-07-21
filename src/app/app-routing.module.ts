@@ -3,15 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path:'home',
+    path:'',
     loadChildren:()=>import("./features/additive-finder/additive-finder.module").then(fichier=>fichier.AdditiveFinderModule)
   },{
-    path:'',
-    redirectTo:'home',
-    pathMatch:'full'
-  },{
     path:'**',
-    redirectTo:'home',
+    redirectTo:'homepage',
     pathMatch:'full'
   }
 ];
