@@ -21,8 +21,7 @@ export class DetailpageComponent{
     itemId = this._route.snapshot.queryParams["item"];
     this.previousPage = this._route.snapshot.queryParams["previousPage"];
 
-    let temp = await this._dataLoader.getData();
-    itemsList = temp.additives;
+    itemsList = await this._dataLoader.getData();
     this.elementInfo = itemsList.find((e:any) => e.id === itemId);
 
     let tempName = this.elementInfo.name.split(" ")[0];

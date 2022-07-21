@@ -11,16 +11,15 @@ import { DataLoaderService } from '../../services/data-loader.service';
 export class SearchpageComponent implements OnInit{
 
   searchValue!:string;
-  
+
   itemsList!:any;
-  
+
   constructor(private readonly _router : Router, private readonly _dataLoader : DataLoaderService){ }
-  
+
   async ngOnInit() {
-    let temp = await this._dataLoader.getData();
-    this.itemsList = temp.additives;
+    this.itemsList = await this._dataLoader.getData();
   }
-  
+
   startSearch1() {
     let elementInfo = this.itemsList.find((e:any) => e.id === this.searchValue);
     if(!elementInfo){

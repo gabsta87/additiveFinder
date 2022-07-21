@@ -2,7 +2,11 @@
 <ion-content>
 
   <ion-list class="ion-no-padding">
-      <ion-item *ngFor="let currentItem of itemsList" (click)="seeDetails(currentItem)">
+      <ion-item 
+        *ngFor="let currentItem of itemsList" 
+        (click)="seeDetails(currentItem)"
+        class="ion-no-padding"
+        >
         <ion-thumbnail class="
         {{currentItem.level|dangerClassColor}}
         ion-no-margin
@@ -16,7 +20,7 @@
       </ion-item>
   </ion-list>
 
-  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+  <ion-infinite-scroll (ionInfinite)="loadData($event)">
     <ion-infinite-scroll-content
       loadingSpinner="bubbles"
       loadingText="Loading more data...">

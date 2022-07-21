@@ -8,21 +8,27 @@ import { firstValueFrom } from 'rxjs';
 export class DataLoaderService {
 
   itemsData!:any;
+  temp!:any;
 
   constructor(private readonly _http: HttpClient) { }
 
-  async getData(){
+  async getData(count?:number){
     if(!this.itemsData){
       const url = '../assets/data/db.json';
       const request = this._http.get(url);
-      this.itemsData = await firstValueFrom(request);
+      this.temp = await firstValueFrom(request);
+      this.itemsData = this.temp.additives;
     }
-    return this.itemsData;
+    return this.itemsData.slice(0,count);
   }
 
   async getOnlineData(url:string){
     const request = this._http.get(url);
     const onlineData = await firstValueFrom(request);
     return onlineData;
+  }
+
+  getElementsCount(){
+    return this.itemsData.length;
   }
 }
