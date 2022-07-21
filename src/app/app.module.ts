@@ -13,18 +13,6 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot([{
-      path:'home',
-      loadChildren:()=>import("./features/additive-finder/additive-finder.module").then(fichier=>fichier.AdditiveFinderModule)
-    },{
-      path:'',
-      redirectTo:'home',
-      pathMatch:'full'
-    },{
-      path:'**',
-      redirectTo:'home',
-      pathMatch:'full'
-    }]),
     IonicModule.forRoot()
   ],
   providers: [],

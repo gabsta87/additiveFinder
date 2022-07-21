@@ -1,1 +1,7 @@
+<app-header></app-header>
 <p>homepage works!</p>
+<ion-list>
+    <ion-item *ngFor="let currentItem of itemsList">
+      <ion-label (click)="seeDetails(currentItem)">{{currentItem.name}}</ion-label>
+    </ion-item>
+</ion-list>
