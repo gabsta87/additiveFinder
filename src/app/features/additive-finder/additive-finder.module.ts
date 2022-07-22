@@ -43,6 +43,10 @@ import { HeaderTitlePipe } from './pipes/header-title.pipe';
       },{
         path:'homepage',
         component:HomepageComponent
+      },{
+        path:'',
+        redirectTo:'homepage',
+        pathMatch:'full'
       }]
     },])
   ],

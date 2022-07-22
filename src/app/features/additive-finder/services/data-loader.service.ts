@@ -14,7 +14,7 @@ export class DataLoaderService {
 
   async getData(count?:number){
     if(!this.itemsData){
-      const url = '../assets/data/db.json';
+      const url = './assets/data/db.json';
       const request = this._http.get(url);
       this.temp = await firstValueFrom(request);
       this.itemsData = this.temp.additives;

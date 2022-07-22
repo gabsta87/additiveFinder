@@ -19,3 +19,25 @@
     background-color: red;
     --background : red;
 }
+
+.main-list-items{
+    padding-left: 10px;
+}
+
+.search-input{
+    border:solid 1px lightgrey;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.items-list-thumbnails{
+    display: flex;
+}
+
+.search-page-div{
+    height: 100%;
+    display: flex;
+}

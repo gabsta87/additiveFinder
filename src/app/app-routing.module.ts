@@ -7,11 +7,7 @@ const routes: Routes = [
     loadChildren:()=>import("./features/additive-finder/additive-finder.module").then(fichier=>fichier.AdditiveFinderModule)
   },{
     path:'**',
-    redirectTo:'homepage',
-    pathMatch:'full'
-  },{
-    path:'',
-    redirectTo:'homepage',
+    redirectTo:'',
     pathMatch:'full'
   }
 ];

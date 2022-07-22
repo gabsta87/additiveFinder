@@ -1,6 +1,6 @@
 <ion-header>
     <ion-toolbar>
-        <ion-grid class="ion-no-padding">
+        <!-- <ion-grid class="ion-no-padding">
             <ion-row>
                 <ion-col *ngIf="previousPage" size="0.3" (click)="navigateBack()">
                   <ion-icon name="arrow-back-outline"></ion-icon>
@@ -9,6 +9,12 @@
                     <ion-title>{{currentPage|headerTitle}}</ion-title>
                 </ion-col>
             </ion-row>
-        </ion-grid>
+        </ion-grid> -->
+        <ion-buttons *ngIf="previousPage" (click)="navigateBack()">
+            <ion-button>
+                <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>{{currentPage|headerTitle}}</ion-title>
     </ion-toolbar>
 </ion-header>

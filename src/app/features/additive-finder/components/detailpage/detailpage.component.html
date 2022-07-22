@@ -17,7 +17,14 @@
 
         <ion-card-content>
             {{elementInfo?.info}}
-            This is where content comes
+            {{tempOnlineData?.extract}}
+            <br>
+
+            <!-- {{tempOnlineData|json}} -->
+            <!-- <br>
+            {{tempOnlineData?.thumbnail.source}} -->
+
+            <ion-img *ngIf="tempOnlineData?.thumbnail?.source" [src]="tempOnlineData.thumbnail.source"></ion-img>
         </ion-card-content>
     </ion-card>
 </ion-content>

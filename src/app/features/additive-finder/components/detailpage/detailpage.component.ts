@@ -11,6 +11,7 @@ export class DetailpageComponent{
 
   elementInfo!:any;
   previousPage!:any;
+  tempOnlineData!:any;
 
   constructor(private _route: ActivatedRoute,private readonly _dataLoader : DataLoaderService) {}
 
@@ -26,11 +27,10 @@ export class DetailpageComponent{
 
     let tempName = this.elementInfo.name.split(" ")[0];
 
-    let wikiUrl = "https://fr.wikipedia.org/w/api.php?action=parse&page="+tempName+"&format=json";
+    // let wikiUrl = "https://fr.wikipedia.org/w/api.php?action=parse&page="+tempName+"&format=json";
+    let wikiUrl = "https://fr.wikipedia.org/api/rest_v1/page/summary/E"+this.elementInfo.id;
 
-    console.log("url = ",wikiUrl);
-
-    // let tempOnlineData = await this._dataLoader.getOnlineData(wikiUrl);
-    // console.log("online data = ",tempOnlineData);
+    this.tempOnlineData = await this._dataLoader.getOnlineData(wikiUrl);
+    console.log("online data = ",this.tempOnlineData);
   }
 }
