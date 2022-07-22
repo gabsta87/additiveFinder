@@ -1,20 +1,21 @@
 <app-header currentPage="search"></app-header>
 <ion-content>
-    <div class="ion-align-items-center ion-justify-content-center ion-text-center search-page-div">
-    <ion-item lines="none">
-        <ion-label>E</ion-label>
-        <ion-input class="search-input" [(ngModel)]="searchValue" type="number" size="3" required="true"></ion-input>
+    <ion-item lines="none"
+        class="ion-align-items-center
+            ion-justify-content-center
+            ion-text-center
+            search-page-div">
+        <!-- <div> -->
+            <ion-label>E</ion-label>
+            <ion-input class="search-input" 
+                [(ngModel)]="searchValue" 
+                type="number" 
+                size="3" 
+                required="true"></ion-input>
+            <ion-button (click)="startSearch1()" color="light">Search</ion-button>
+        <!-- </div> -->
     </ion-item>
-    <ion-button (click)="startSearch1()" color="light">Search</ion-button>
-    </div>
 
-    <!-- <ion-item>
-        <ion-menu-toggle>
-            <ion-button>Toggle Menu</ion-button>
-        </ion-menu-toggle>
-
-    </ion-item> -->
-    
 <!--<ion-input #inputVal></ion-input>
     <ion-button (click)="startSearch2(inputVal)">Search</ion-button> -->
 </ion-content>

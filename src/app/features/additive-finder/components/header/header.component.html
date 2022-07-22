@@ -1,15 +1,5 @@
 <ion-header>
     <ion-toolbar>
-        <!-- <ion-grid class="ion-no-padding">
-            <ion-row>
-                <ion-col *ngIf="previousPage" size="0.3" (click)="navigateBack()">
-                  <ion-icon name="arrow-back-outline"></ion-icon>
-                </ion-col>
-                <ion-col>
-                    <ion-title>{{currentPage|headerTitle}}</ion-title>
-                </ion-col>
-            </ion-row>
-        </ion-grid> -->
         <ion-buttons *ngIf="previousPage" (click)="navigateBack()">
             <ion-button>
                 <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
@@ -17,4 +7,12 @@
         </ion-buttons>
         <ion-title>{{currentPage|headerTitle}}</ion-title>
     </ion-toolbar>
+
+    <ion-buttons *ngIf="currentPage==='homepage'" class="ion-align-items-center ion-justify-content-center ion-text-center">
+        <ion-button (click)="selectItemLevel(0)" class="code_acceptable">Safe</ion-button>
+        <ion-button (click)="selectItemLevel(1)" class="code_avoid">To Avoid</ion-button>
+        <ion-button (click)="selectItemLevel(2)" class="code_controversy">Controversial</ion-button>
+        <ion-button (click)="selectItemLevel(3)" class="code_danger">Danger</ion-button>
+        <ion-button (click)="selectItemLevel(-1)" class="code_neutral">Clear</ion-button>
+    </ion-buttons>
 </ion-header>

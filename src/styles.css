@@ -20,6 +20,11 @@
     --background : red;
 }
 
+.code_neutral{
+    background-color: grey;
+    --background : grey;
+}
+
 .main-list-items{
     padding-left: 10px;
 }

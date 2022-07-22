@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,15 +10,18 @@ export class HeaderComponent implements OnInit {
 
   @Input() currentPage!:any;
   @Input() previousPage?:any;
+  @Output() itemChosen : EventEmitter<number> = new EventEmitter();
 
   constructor(private readonly _router: Router ) { }
 
   ngOnInit(): void {}
 
   navigateBack(){
-    console.log("previous page = ",this.previousPage);
-    
     this._router.navigate([this.previousPage]);
+  }
+
+  selectItemLevel(value:number){
+    this.itemChosen.emit(value);
   }
 
 }

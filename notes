@@ -1,4 +1,3 @@
-0 acceptable
-1 a éviter
-2 controversé
-3 danger
+Pour disposer des elements avec les classes ionic ion-justify-content-center et 
+ion-align-items-center, ils doivent se trouver dans un conteneur flex. Par exemple
+un <div> avec display:flex; height : 100%;

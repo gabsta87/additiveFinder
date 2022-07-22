@@ -25,12 +25,8 @@ export class DetailpageComponent{
     itemsList = await this._dataLoader.getData();
     this.elementInfo = itemsList.find((e:any) => e.id === itemId);
 
-    let tempName = this.elementInfo.name.split(" ")[0];
-
-    // let wikiUrl = "https://fr.wikipedia.org/w/api.php?action=parse&page="+tempName+"&format=json";
     let wikiUrl = "https://fr.wikipedia.org/api/rest_v1/page/summary/E"+this.elementInfo.id;
 
     this.tempOnlineData = await this._dataLoader.getOnlineData(wikiUrl);
-    console.log("online data = ",this.tempOnlineData);
   }
 }

@@ -21,8 +21,8 @@ export class SearchpageComponent implements OnInit{
   }
 
   startSearch1() {
-    let elementInfo = this.itemsList.find((e:any) => e.id == this.searchValue);
-    
+    let elementInfo = this.itemsList.find((e:any) => e.id === String(this.searchValue));
+
     if(!elementInfo){
       this.searchValue = "";
     }else{

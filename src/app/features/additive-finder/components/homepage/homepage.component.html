@@ -1,9 +1,9 @@
-<app-header currentPage="homepage"></app-header>
+<app-header currentPage="homepage" (itemChosen)="filterItemsList($event)"></app-header>
 <ion-content>
 
   <ion-list class="ion-no-padding">
-      <ion-item 
-        *ngFor="let currentItem of itemsList" 
+      <ion-item
+        *ngFor="let currentItem of itemsList"
         (click)="seeDetails(currentItem)"
         class="ion-no-padding"
         >

@@ -13,13 +13,25 @@ export class DataLoaderService {
   constructor(private readonly _http: HttpClient) { }
 
   async getData(count?:number){
+    await this.loadData();
+    return this.itemsData.slice(0,count);
+  }
+
+  async loadData(){
     if(!this.itemsData){
       const url = './assets/data/db.json';
       const request = this._http.get(url);
       this.temp = await firstValueFrom(request);
       this.itemsData = this.temp.additives;
     }
-    return this.itemsData.slice(0,count);
+  }
+
+  async getDataFiltered(criteria:number|undefined,count?:number){
+    if(criteria === -1 || criteria === undefined)
+      return this.getData(count);
+    await this.loadData();
+    let temp = this.itemsData.filter((e:{level:String}) => e.level === String(criteria)).slice(0,count);
+    return temp;
   }
 
   async getOnlineData(url:string){
