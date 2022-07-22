@@ -35,8 +35,15 @@ export class DataLoaderService {
   }
 
   async getOnlineData(url:string){
-    const request = this._http.get(url);
-    const onlineData = await firstValueFrom(request);
+    let onlineData;
+    try {
+      const request = this._http.get(url);
+      onlineData = await firstValueFrom(request);
+    } catch (error) {
+      url = url.replace("fr","en");
+      const request = this._http.get(url);
+      onlineData = await firstValueFrom(request);
+    }
     return onlineData;
   }
 
