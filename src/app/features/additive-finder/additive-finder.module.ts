@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { DangerClassColorPipe } from './pipes/danger-class-color.pipe';
 import { DangerTextPipe } from './pipes/danger-text.pipe';
 import { HeaderTitlePipe } from './pipes/header-title.pipe';
+import { LoginpageComponent } from './components/loginpage/loginpage.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import { HeaderTitlePipe } from './pipes/header-title.pipe';
     DangerColorPipe,
     DangerClassColorPipe,
     DangerTextPipe,
-    HeaderTitlePipe],
+    HeaderTitlePipe,
+    LoginpageComponent,
+  ],
   imports: [
     CommonModule,
     IonicModule,
@@ -43,6 +46,9 @@ import { HeaderTitlePipe } from './pipes/header-title.pipe';
       },{
         path:'homepage',
         component:HomepageComponent
+      },{
+        path:'login',
+        component:LoginpageComponent
       },{
         path:'',
         redirectTo:'homepage',

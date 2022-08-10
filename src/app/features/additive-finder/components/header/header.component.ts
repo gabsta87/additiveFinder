@@ -23,5 +23,4 @@ export class HeaderComponent implements OnInit {
   selectItemLevel(value:number){
     this.itemChosen.emit(value);
   }
-
 }

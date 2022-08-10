@@ -29,4 +29,9 @@ export class DetailpageComponent{
 
     this.tempOnlineData = await this._dataLoader.getOnlineData(wikiUrl);
   }
+
+  async pinItem(){
+    console.log("do stuff");
+    
+  }
 }

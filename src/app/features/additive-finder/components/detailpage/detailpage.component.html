@@ -1,6 +1,5 @@
 <app-header currentPage="details" previousPage="{{previousPage}}"></app-header>
 <ion-content>
-    <!-- { "id": "100", "name": "Curcumine", "level": "0", "type": "colorants", "info": "" } -->
     <ion-card>
         <ion-item class="{{elementInfo?.level|dangerClassColor}}">
             <ion-label>E{{elementInfo?.id}}</ion-label>
@@ -20,10 +19,8 @@
             {{tempOnlineData?.extract}}
             <br>
 
-            <!-- {{tempOnlineData|json}} -->
-            <!-- <br>
-            {{tempOnlineData?.thumbnail.source}} -->
-
+            <ion-button (click)="pinItem()">Pin additive</ion-button>
+            <br>
             <ion-img *ngIf="tempOnlineData?.thumbnail?.source" [src]="tempOnlineData.thumbnail.source"></ion-img>
         </ion-card-content>
     </ion-card>

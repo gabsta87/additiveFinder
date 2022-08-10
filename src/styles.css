@@ -25,6 +25,11 @@
     --background : grey;
 }
 
+.pinned{
+    background-color: lightblue;
+    --background : lightblue;
+}
+
 .main-list-items{
     padding-left: 10px;
 }
